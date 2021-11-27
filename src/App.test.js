@@ -25,5 +25,22 @@ test('User is able to type in the birthday input', () => {
   const input = screen.getByLabelText("birthday")
   userEvent.type(input, "07/19/2000")
   expect(input).toHaveValue("07/19/2000")
+})
+
+test('When Button is clicked and input is empty an error message appear "Please Enter your birthday"', () => {
+  render(<App />)
+  const button = screen.getByRole('button', { name: "Get Day Age"})
+  userEvent.click(button )
+  const header = getByRole('heading', {level: 2})
+})
+
+test('button click displays list with items', () => {
+  render(<App/>)
+  const button = screen.getByRole('button', { name: "Get Day Age"})
+  const input = screen.getByLabelText("birthday")
+  userEvent.type(input, "07/19/2000")
+  userEvent.click(button )
+  const list = screen.getByRole('listitem', {name:"Next Birthday:"})
+  expect(list).toBeInTheDocument()
 
 })
