@@ -13,10 +13,23 @@ const BirthdayList = ( { birthday }) => {
         return day
     }
 
-    parseBirthday("11/14/1992")
+    const birthdayCalculator = (birthday, num) => {
+        birthday.parse()
+    }
+
+    const futureBirthdays = () => {
+        //how can I do this recursively?
+        const birthday = parseBirthday("11/14/1992")
+        const days = {}
+    }
+
+    
+
     return (
         <div>
-            
+            <ul>
+                <li>Next Birthday:</li>
+            </ul>
         </div>
     )
 }

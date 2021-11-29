@@ -40,7 +40,7 @@ test('button click displays list with items', () => {
   const input = screen.getByLabelText("birthday")
   userEvent.type(input, "07/19/2000")
   userEvent.click(button )
-  const list = screen.getByRole('listitem', {name:"Next Birthday:"})
+  const list = screen.getByRole('listitem', {text:"Next Birthday:"})
   expect(list).toBeInTheDocument()
 
 })
